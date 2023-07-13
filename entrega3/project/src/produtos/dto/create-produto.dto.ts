@@ -1,11 +1,11 @@
 export class CreateProdutoDto {
 
-    Tipo:string;
+    tipo:string;
 
-    Preço:number;
+    preço:number;
 
-    Tamanho:string;
+    tamanho:string;
 
-    Quantidade:number;
+    quantidadeEmEstoque:number;
 
 }

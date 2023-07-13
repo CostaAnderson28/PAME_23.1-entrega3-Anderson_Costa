@@ -1,6 +1,6 @@
-import { Pedido } from "src/pedidios/entities/pedido.entity";
-import { Produto } from "src/produtos/entities/produto.entity";
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToMany } from "typeorm";
+
+import { Pedido } from "src/pedidos/entities/pedido.entity";
+import { Entity, Column, PrimaryGeneratedColumn,OneToMany } from "typeorm";
 
 @Entity({name: 'user'})
 export class User {
@@ -9,20 +9,14 @@ export class User {
     id:number 
 
     @Column()
-    Usuário:string
+    usuario:string
 
     @Column()
-    Senha:string
+    senha:string
 
     @Column()
-    Tipo:string
+    tipo:string
 
-    @OneToMany(() => Pedido , pedidos => pedidos.Usuário, {nullable: true})
-    Pedidos: Pedido[]
-
-    @ManyToMany(() => Produto, produtos => produtos.Usuários, {nullable: true})
-    Produtos: Produto[]
-
-
-
+    @OneToMany(() => Pedido , pedidos => pedidos.usuario)
+    pedidos: Pedido[]
 }

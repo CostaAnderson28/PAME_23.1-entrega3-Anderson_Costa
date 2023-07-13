@@ -1,9 +1,9 @@
 export class CreateUserDto {
     
-    Usuário:string ;
+    usuario:string ;
     
-    Senha:string ;
+    senha:string ;
 
-    Tipo:string;
-
+    tipo:string;
 }
+

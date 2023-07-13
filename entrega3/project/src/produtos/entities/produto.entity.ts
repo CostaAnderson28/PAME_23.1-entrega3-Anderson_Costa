@@ -1,5 +1,5 @@
-import { User } from "src/user/entities/user.entity";
-import { Entity, Column, PrimaryGeneratedColumn, ManyToMany } from "typeorm";
+import { Pedido } from "src/pedidos/entities/pedido.entity";
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from "typeorm";
 
 @Entity({name: 'produtos'})
 export class Produto {
@@ -8,21 +8,21 @@ export class Produto {
     id:number
 
     @Column({nullable: true})
-    Nome:string
+    nome:string
 
     @Column()
-    Tipo:string
+    tipo:string
 
     @Column()
-    Preço:number
+    preço:number
 
     @Column()
-    Tamanho:string
+    tamanho:string
 
     @Column()
-    Quantidade_em_estoque:number
+    quantidadeEmEstoque:number
 
-    @ManyToMany(() => User , user => user.Produtos, {nullable: true})
-    Usuários:User[]
-
+    @OneToMany(() => Pedido, pedidos => pedidos.produto)
+    pedidos:Pedido[]
+    
 }
